@@ -12,6 +12,8 @@ async function getPostOfTheDayContent(){
     document.querySelector('.scroll-box1 p').appendChild(document.createTextNode(postOfTheDayContentFinal.postContent));
     const blogsInit = await fetch('./data/blogs/data.json');
     const blogsFinal = await blogsInit.json();
+    const factsInit = await fetch('./data/facts/data.json');
+    const factsFinal = await factsInit.json();
     blogsFinalGlobal = blogsFinal;
     blogsFinal.forEach((element, index)=>{
         const tempImg = new Image();
@@ -25,13 +27,20 @@ async function getPostOfTheDayContent(){
         document.querySelector('.scroll-box2').appendChild(tempContainer);
         tempContainer.setAttribute('onclick', `blogsClickHandler(this)`);
     });
+    factsFinal.forEach((element,index)=>{
+        const tempPara = document.createElement('p');
+        tempPara.appendChild(document.createTextNode(element));
+        const tempContainer = document.createElement('span');
+        tempContainer.appendChild(tempPara);
+        document.querySelector('.scroll-box3').appendChild(tempContainer);
+    });
 }
 getPostOfTheDayContent();
 function blogsClickHandler(obj){
     // document.querySelector('.blogs-viewer-container .blogImg img').src = obj.img.src;
-    document.querySelector('.blogs-viewer-container .blogContent p').innerHTML = `<img src = "${blogsFinalGlobal[(obj.classList.value).substring(8,9)].imgSrc}">${blogsFinalGlobal[(obj.classList.value).substring(8,9)].postContent} <br><br> <h2>get products talked about in this blog below.</h2><br><br>`;
+    document.querySelector('.blogs-viewer-container .blogContent p').innerHTML = `<img src = "${blogsFinalGlobal[(obj.classList.value).substring(8,9)].imgSrc}">${blogsFinalGlobal[(obj.classList.value).substring(8,9)].postContent}<h3>get products talked about in this blog below.</h3>`;
     blogsFinalGlobal[(obj.classList.value).substring(8,9)].adsArray.forEach((ad,indexOfAd)=>{
-        document.querySelector('.blogs-viewer-container .blogContent p').innerHTML += ad + '<br>';
+        document.querySelector('.blogs-viewer-container .blogContent p').innerHTML += ad;
     });
     document.querySelector('.menu-icon').classList.add('make-invisible');
     document.querySelector('.back-icon').classList.remove('make-invisible');
@@ -60,6 +69,7 @@ exploreBtn.addEventListener('click', ()=>{
         document.querySelector('.scroll-box1').classList.remove('make-invisible');
         document.querySelector('.scroll-box2').classList.remove('make-invisible');
         document.querySelector('.scroll-box3').classList.remove('make-invisible');
+        document.querySelector('.promotion').classList.remove('make-invisible');
         document.querySelector('.menu-icon').classList.remove('make-invisible');
         t1.fromTo(document.querySelector('.scroll-box1'), 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut})
         t1.fromTo(document.querySelector('.scroll-box2'), 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut})
@@ -76,4 +86,8 @@ document.querySelector('.menu-icon').addEventListener('click', ()=>{
     menuIconClickCount++;
     document.querySelector('.menu').classList.toggle('make-invisible');
     t1.fromTo(document.querySelector('.menu'), 0.2, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
+    const menuTop = document.querySelector('.menu .menu-top');
+    const menuBottom = document.querySelector('.menu .menu-bottom');
+    t1.fromTo(menuTop, 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
+    t1.fromTo(menuBottom, 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
 });
