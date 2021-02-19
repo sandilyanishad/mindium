@@ -40,7 +40,7 @@
             </h2>
         </div>
         <div class="promotion make-invisible">
-            <p>Built with <span><img width="10px" src="./images/icons/icons8-heart-96.png" alt=""></span> by Theesaan Enterprises</p>
+            <a href="mailto:theesaan@gmail.com"><p>Built with <span><img width="10px" src="./images/icons/icons8-heart-96.png" alt=""></span> by Theesaan Enterprises</p></a>
         </div>
     </div>
     <!-- floating containers -->
@@ -55,21 +55,83 @@
         </span>
         <span class="divider"></span>
         <span class="menu-bottom">
-            <p>Home</p>
-            <p>Services</p>
-            <p>Contact Us</p>
-            <p>Privacy Policy</p>
-            <p>Disclaimer</p>
-            <p>Terms of Use</p>
+            <span onclick="homeHandler(this)"><img width="24px" src="./images/icons/icons8-home-96.png" alt=""><p>Home</p></span>
+            <span onclick="servicesHandler(this)"><img width="24px" src="./images/icons/icons8-service-96.png" alt=""><p>Services</p></span>
+            <span onclick="contactHandler(this)"><img width="24px" src="./images/icons/icons8-contact-info-96.png" alt=""><p>Contact Us</p></span>
+            <span onclick="privacyHandler(this)"><img width="24px" src="./images/icons/icons8-privacy-policy-96.png" alt=""><p>Privacy Policy</p></span>
+            <span onclick="disclaimerHandler(this)"><img width="24px" src="./images/icons/icons8-disclaimer-96.png" alt=""><p>Disclaimer</p></span>
+            <span onclick="termsHandler(this)"><img width="24px" src="./images/icons/icons8-terms-and-conditions-96.png" alt=""><p>Terms of Use</p></span>
         </span>
     </div>
     <div class="blogs-viewer-container make-invisible">
         <span class="mindium">mindium.</span>
         <span class="blogContent"><p></p></span>
     </div>
+    <div class="contact-us-container make-invisible">
+        <span class="mindium">contact us.</span>
+        <span class="contactusContent">
+            <span class="help">
+                <h3>We are ever-ready to help our customers</h3>
+                <p>Have a query, or need help with a purchase? You can either call us or mail us by clicking on either of the below options.</p>                
+                <span class="button-under-contact-us"><a href="tel:8486131474" >call us</a></span>
+                <span class="button-under-contact-us"><a href="mailto:mindium0121@gmail.com" >write to us</a></span>
+            </span>
+        </span>
+    </div>
+    <div class="services-container make-invisible">
+        <span class="mindium">services.</span>
+        <span class="servicesContent">
+            <span class="free-session">
+                <h3>1. Book a free counselling session</h3>
+                <p>We respect the customer's sentiments about trusting a new firm. We provide a 5 min free session here at mindium to help you clear all your doubts. Please note, that our automated bots will immediately kill the call after the 5th min.</p>
+                <span class="cost">INR 0</span>
+                <span onclick="bookNowFreeSessionHandler(this)" class="button-under-services book-free-session-btn">book now</span>
+            </span>
+            <span class="cbt">
+                <h3>2. Rational-Emotive & Cognitive Behavioral Therapy (RECBT)</h3>
+                <p>Need help with your mental health? Our therapy sessions aim to help you out. Each session will be of about 45 to 60 mins long focusing primarily on your issues. Available at lucrative price schemes, you dont have to wait any longer and speak to our therapists. <b>NOTE: Payments are made using Razorpay. At the end of a successful payment, you will receive the receipt in your mail via. Razorpay</b></p>
+                <span class="cost">INR 800/session</span>
+                <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_GdQeZbAhr5FLx0" async> </script> </form>
+                <span class="cost">INR 2000/3 sessions</span>
+                <form><script src="https://checkout.razorpay.com/v1/payment-button.js" data-payment_button_id="pl_GdQeZbAhr5FLx0" async> </script> </form>
+            </span>
+        </span>
+    </div>
+    <div class="free-session-booked make-invisible">
+        <span class="contentBox">
+            <h3>mindium.</h3>
+            <p>Fill the below details, once done, you will receive an email within the next 24hrs followed by your 5 min free session. Please do not refresh or close this window mid-process.</p>
+            <form target="_blank" action="./pages/formDetails.html" method="GET">
+                <span>
+                    <label for="name-of-the-client">Full Name:</label>
+                    <input id="name-of-the-client" name="clientsFullName" type="text" required>
+                </span>
+                <span>
+                    <label for="email-of-the-client">Email:</label>
+                    <input id="email-of-the-client" name="clientsEmail" type="email" required>
+                </span>
+                <span>
+                    <label for="age-of-the-client">Age:</label>
+                    <input placeholder="min required age is 18" id="age-of-the-client" name="clientsAge" type="number" min="18" max="100" required>
+                </span>
+                <span>
+                    <label for="number-of-the-client">Phone:</label>
+                    <input id="number-of-the-client" name="clientsPhoneNumber" type="tel" required>
+                </span>
+                <span>
+                    <button onclick = "submitBtnHandler()" type="submit" id="submit-Btn">submit now</button>
+                    <button class="make-invisible" type="reset" id="reset-Btn">reset</button>
+                </span>
+            </form>
+            <span onclick="crossIconHandler(this)" class="cross-icon">
+                <img width="32px" src="./images/icons/icons8-multiply-96 (1).png"alt="">
+            </span>
+        </span>
+    </div>
     <span class="back-icon make-invisible">
         <img width="48px" src="./images/icons/icons8-back-96.png" alt="">
     </span>
+    <a href="./index.html" class="trigger-home make-invisible"></a>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.0/gsap.min.js" integrity="sha512-1dalHDkG9EtcOmCnoCjiwQ/HEB5SDNqw8d4G2MKoNwjiwMNeBAkudsBCmSlMnXdsH8Bm0mOd3tl/6nL5y0bMaQ==" crossorigin="anonymous"></script>
     <script src="./js/index.js"></script>
 </body>

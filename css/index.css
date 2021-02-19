@@ -7,6 +7,13 @@
     overflow-x: hidden;
     font-family: 'Raleway', sans-serif;
 }
+button{
+    border: none;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
 ::-webkit-scrollbar {
     width: 3px;
 }
@@ -219,22 +226,25 @@
 }
 .menu .menu-top p{
     max-width: 90vw;
+    /* min-height: 10vh; */
     max-height: 20vh;
     margin-top: 10px;
     font-size: 16px;
     line-height: 16px;
     font-weight: 600;
     color: #888888;
+    /* flex-shrink: 5; */
 }
 .menu .divider{
     width: 65vw;
     height: 5px;
     border-radius: 5px;
-    background-color: rgba(0, 0, 0, 0.151);margin-top: 10px;
+    background-color: rgba(0, 0, 0, 0.068);margin-top: 10px;
 }
 .menu .menu-bottom{
-    width: 100%;
-    height: 45vh;
+    margin-top: 20px;
+    width: 90%;
+    height: 30vh;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 0.5fr 1fr;
@@ -256,7 +266,39 @@
 /* .menu .legal{
 
 } */
+.menu .menu-bottom span{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: rgba(0, 0, 0, 0.041) solid;
+    border-radius: 15px;
+    min-width: 100px;
+    max-width: 100px;
+    min-height: 100px;
+    max-height: 100px;
+    cursor: pointer;
+}
+.menu .menu-bottom span p{
+    text-align: center;
+    margin-top: 5px;
+}
 .blogs-viewer-container{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgb(255, 255, 255);
+    z-index: 3;
+    opacity: 0;
+    overflow-y: auto;
+}
+.services-container{
     display: flex;
     flex-direction: column;
     position: fixed;
@@ -269,13 +311,240 @@
     background: rgb(255, 255, 255);
     z-index: 3;
     opacity: 0;
-    overflow-y: auto;
+    /* overflow-y: auto; */
+}
+.contact-us-container{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    /* justify-content: center; */
+    align-items: center;
+    background: rgb(255, 255, 255);
+    z-index: 3;
+    opacity: 0;
+    /* overflow-y: auto; */
+}
+.free-session-booked{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.603);
+    z-index: 6;
+    /* border-radius: 15px; */
+    opacity: 0;
+    /* overflow-y: auto; */
+}
+.free-session-booked .contentBox{
+    display: flex;
+    flex-direction: column;
+    min-width: 80vw;
+    flex-grow: 0.1;
+    max-width: 80vw;
+    position: relative;
+    min-height: 50vh;
+    max-height: 80vh;
+    background-color: rgb(255, 255, 255);
+    border-radius: 15px;
+}
+.contentBox h3{
+    align-self: center;
+    padding: 10px;
+    color:rgb(88, 88, 88);
+}
+.contentBox p{
+    align-self: center;
+    margin: 0 20px;
+    color:rgb(88, 88, 88);
+    font-size: 16px;
+    line-height: 16px;
+}
+.contentBox form{
+    flex-shrink: 0;
+    /* border: black solid; */
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contentBox form span{
+    display: flex;
+    flex-shrink: 0;
+    flex-direction: column;
+    width: 100%;
+    /* border: solid black; */
+    margin: 5px auto;
+}
+.contentBox form span label{
+    color: #525252;
+}
+.contentBox form span input{
+    text-align: center;
+    outline: none;
+    margin-top: 5px;
+    border: none;
+    background-color: rgba(0, 0, 0, 0.082);
+    border-radius: 15px;
+    min-height: 40px;
+}
+#submit-Btn{
+    width: fit-content;
+    align-self: center;
+    height: fit-content;
+    font-weight: 700;
+    min-height: fit-content;
+    padding: 5px 15px;
+    background-color: black;
+    color: rgb(255, 255, 255);
+    margin-top: 20px;
+    border-radius: 10px;
+    border:none;
+    /* background: rgb(0, 0, 0); */
+    cursor: pointer;
 }
 .blogs-viewer-container .mindium{
     color: rgb(134, 134, 134);
     font-size: 50px;
     font-weight: 600;
     min-height: 10vh;
+    margin-top: 20px;
+}
+.contact-us-container .mindium{
+    color: rgb(134, 134, 134);
+    font-size: 50px;
+    font-weight: 600;
+    min-height: 10vh;
+    margin-top: 20px;
+}
+.services-container .mindium{
+    color: rgb(134, 134, 134);
+    font-size: 50px;
+    font-weight: 600;
+    min-height: 10vh;
+    margin-top: 20px;
+}
+.services-container .servicesContent{
+    min-height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact-us-container .contactusContent{
+    min-height: max-content;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.services-container .servicesContent p{
+    flex-shrink: 0;
+    min-height: max-content;
+    color: rgb(119, 119, 119);
+    font-weight: 500;
+    /* margin: 10px 0; */
+    margin-top: 10px;
+    line-height: 16px;
+    /* border: black solid; */
+}
+.cross-icon{
+    position: absolute;
+    bottom: 5px;
+    right: 5px;
+}
+.services-container .servicesContent h3{
+    color: rgb(88, 88, 88);
+}
+.services-container .servicesContent .button-under-services{
+    display: flex;
+    width: 205px;
+    /* border: black solid; */
+    /* margin: 20px auto; */
+    border-radius: 15px;
+    justify-content: center;
+    font-weight: 700;
+    color: white;
+    background-color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    /* margin: 10px auto; */
+    cursor: pointer;
+}
+.services-container .servicesContent span{
+    background-color: rgba(0, 0, 0, 0.082);
+    padding: 10px;
+    border-radius: 15px;
+    /* overflow: hidden; */
+    flex-shrink: 0;
+    /* min-height: 100%; */
+    margin: 20px auto;
+    max-width: 90vw;
+}
+.contact-us-container .contactusContent .help{
+    background-color: rgba(0, 0, 0, 0.082);
+    padding: 10px;
+    border-radius: 15px;
+    /* overflow: hidden; */
+    flex-shrink: 0;
+    /* min-height: 100%; */
+    margin: 20px auto;
+    max-width: 90vw;
+}
+.contact-us-container .contactusContent .help p{
+    color: rgb(119, 119, 119);
+    font-weight: 500;
+    /* margin: 10px 0; */
+    margin-top: 10px;
+    line-height: 16px;
+    margin-bottom: 20px;
+}
+.contact-us-container .contactusContent .help h3{
+    color: rgb(88, 88, 88);
+}
+.contact-us-container .contactusContent span a{
+    display: flex;
+    justify-content: center;
+    background-color: rgb(0, 0, 0);
+    color: white;
+    font-weight: 700;
+    padding: 10px 15px;
+    border-radius: 15px;
+    margin-top: 10px;
+}
+.services-container .servicesContent span{
+    background-color: rgba(0, 0, 0, 0.082);
+    padding: 10px;
+    border-radius: 15px;
+    /* overflow: hidden; */
+    flex-shrink: 0;
+    /* min-height: 100%; */
+    margin: 20px auto;
+    max-width: 90vw;
+}
+.services-container .servicesContent span .cost{
+    /* color: rgb(73, 255, 88); */
+    display: flex;
+    font-weight: 700;
+    max-width: 205px;
+    /* width: fit-content; */
+    color: rgb(136, 136, 136);
+    margin-top: 20px;
+    margin-bottom: -10px;
+    /* border: solid black; */
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.055);
+    /* align-self: center; */
+    /* justify-self: center; */
+    /* border: black solid; */
+    /* text-align: center; */
 }
 .blogs-viewer-container img{
     max-width: 60vw;
@@ -318,7 +587,11 @@
     margin-bottom: 25px;
     color: white;
 }
-
+.cbt form{
+    position: relative;
+    display: flex;
+    /* border: black solid; */
+}
 
 
 
@@ -347,4 +620,8 @@
 }
 .make-invisible{
     display: none;
+}
+.blur-container{
+    /* background-color: rgba(0, 0, 0, 0.13); */
+    filter: blur(4px);
 }

@@ -48,7 +48,8 @@ function blogsClickHandler(obj){
     t1.fromTo(document.querySelector('.blogs-viewer-container'), 0.2, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
 }
 document.querySelector('.back-icon').addEventListener('click', ()=>{
-
+    document.querySelector('.services-container').classList.add('make-invisible');
+    document.querySelector('.contact-us-container').classList.add('make-invisible');
     document.querySelector('.blogs-viewer-container').classList.add('make-invisible');
     document.querySelector('.menu-icon').classList.remove('make-invisible');
     document.querySelector('.back-icon').classList.add('make-invisible');
@@ -91,3 +92,38 @@ document.querySelector('.menu-icon').addEventListener('click', ()=>{
     t1.fromTo(menuTop, 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
     t1.fromTo(menuBottom, 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
 });
+//All menu-item handlers
+function homeHandler(obj){
+    document.querySelector('.trigger-home').click();
+}
+function servicesHandler(obj){
+    document.querySelector('.menu-icon').classList.add('make-invisible');
+    document.querySelector('.back-icon').classList.remove('make-invisible');
+    document.querySelector('.services-container').classList.remove('make-invisible');
+    t1.fromTo(document.querySelector('.services-container'), 0.2, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
+}
+function contactHandler(obj){
+    document.querySelector('.menu-icon').classList.add('make-invisible');
+    document.querySelector('.back-icon').classList.remove('make-invisible');
+    document.querySelector('.contact-us-container').classList.remove('make-invisible');
+    t1.fromTo(document.querySelector('.contact-us-container'), 0.2, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
+}
+function privacyHandler(obj){}
+function disclaimerHandler(obj){}
+function termsHandler(obj){}
+function bookNowFreeSessionHandler(obj){
+    document.querySelector('.services-container').classList.add('blur-container');
+    document.querySelector('.free-session-booked').classList.remove('make-invisible');
+    document.querySelector('.back-icon').classList.add('make-invisible');
+    t1.fromTo(document.querySelector('.free-session-booked'), 0.2, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
+}
+function crossIconHandler(obj){
+    document.querySelector('.services-container').classList.remove('blur-container');
+    document.querySelector('.free-session-booked').classList.add('make-invisible');
+    document.querySelector('.back-icon').classList.remove('make-invisible');
+}
+function submitBtnHandler(){
+    setTimeout(()=>{
+        document.querySelector('#reset-Btn').click();
+    },500);
+}
