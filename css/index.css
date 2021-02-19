@@ -512,12 +512,14 @@ a{
 .contact-us-container .contactusContent span a{
     display: flex;
     justify-content: center;
+    align-items: center;
     background-color: rgb(0, 0, 0);
     color: white;
     font-weight: 700;
     padding: 10px 15px;
     border-radius: 15px;
-    margin-top: 10px;
+    margin: 10px auto;
+    width: 205px;
 }
 .services-container .servicesContent span{
     background-color: rgba(0, 0, 0, 0.082);
