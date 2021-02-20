@@ -24,7 +24,7 @@ async function getPostOfTheDayContent(){
     const postOfTheDayContentInit = await fetch('./data/post of the day/data.json');
     const postOfTheDayContentFinal = await postOfTheDayContentInit.json();
     document.querySelector('.scroll-box1 img').src = postOfTheDayContentFinal.imgSrc;
-    document.querySelector('.scroll-box1 p').appendChild(document.createTextNode(postOfTheDayContentFinal.postContent));
+    document.querySelector('.scroll-box1 p').innerHTML += postOfTheDayContentFinal.postContent;
     const blogsInit = await fetch('./data/blogs/data.json');
     const blogsFinal = await blogsInit.json();
     const factsInit = await fetch('./data/facts/data.json');

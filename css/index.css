@@ -136,11 +136,12 @@ a{
     margin: 0 auto;
 }
 .scroll-box1 p{
-    margin: 0 35px;
+    max-width: 70vw;
+    /* margin: 0 35px; */
     z-index: 3;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     margin-bottom: 25px;
-    position: relative;
+    /* position: relative; */
 }
 .scroll-box2 span{
     width: 80vw;
