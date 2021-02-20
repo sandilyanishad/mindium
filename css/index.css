@@ -143,6 +143,34 @@ a{
     margin-bottom: 25px;
     /* position: relative; */
 }
+.unsupported-res{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    z-index: 999;
+}
+.unsupported-res h2{
+    font-size: 50px;
+    color: rgb(82, 82, 82);
+    margin-bottom: 15vh;
+}
+.unsupported-res p{
+    max-width: 80vw;
+    /* border: violet solid; */
+    background-color: rgba(87, 87, 87, 0.212);
+    padding: 20px 30px;
+    border-radius: 15px;
+    color: rgb(61, 61, 61);
+    font-size: 1em;
+    font-weight: 600;
+}
 .scroll-box2 span{
     width: 80vw;
     min-height: 10vh;
