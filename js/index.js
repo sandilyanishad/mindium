@@ -34,7 +34,7 @@ async function getPostOfTheDayContent(){
         const tempImg = new Image();
         tempImg.src = element.imgSrc;
         const tempPara = document.createElement('p');
-        tempPara.appendChild(document.createTextNode(element.postContent));
+        tempPara.appendChild(document.createTextNode(element.introContent));
         const tempContainer = document.createElement('span');
         tempContainer.setAttribute('class', `blogs-id${index}`);
         tempContainer.appendChild(tempImg);
