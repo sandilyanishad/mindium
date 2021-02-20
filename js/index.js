@@ -1,3 +1,18 @@
+window.onload = ()=>{
+    if(window.outerHeight < window.outerWidth){
+        document.querySelector('body').classList.add('make-invisible');
+        alert('mindium. is developed to be used only on mobile phones for now. Please switch to your phone to view mindium. If you are on a phone and you are getting this, please switch to portrait mode. Thank you');
+    }
+}
+window.addEventListener("orientationchange", function(event) {
+    if(event.target.screen.width > event.target.screen.height){
+        document.querySelector('body').classList.add('make-invisible');
+        alert('mindium. is developed to be used only in portrait mode. Please switch to portrait to view mindium. Thank you');
+    }
+    else{
+        document.querySelector('body').classList.remove('make-invisible');
+    }
+});
 const mindium = document.querySelector('.mindium');
 const tagline = document.querySelector('.tagline');
 const exploreBtn = document.querySelector('.explore-btn');
@@ -133,3 +148,11 @@ function session1handler(){
 function session3handler(){
     document.querySelector('.s3').click();
 }
+// window.addEventListener("orientationchange", function() {
+//     if(window.innerHeight < window.innerWidth){
+//         document.querySelector('#root').classList.add('make-invisible');
+//     }
+//     else{
+//         document.querySelector('#root').classList.remove('make-invisible');
+//     }
+// });
