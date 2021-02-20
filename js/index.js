@@ -127,3 +127,9 @@ function submitBtnHandler(){
         document.querySelector('#reset-Btn').click();
     },500);
 }
+function session1handler(){
+    document.querySelector('.s1').click();
+}
+function session3handler(){
+    document.querySelector('.s3').click();
+}

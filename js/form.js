@@ -7,10 +7,15 @@ function generateFragments(){
 function generateBookingID(){
     return `${generateFragments()}${generateFragments()}${generateFragments()}${generateFragments()}${generateFragments()}${generateFragments()}-${generateFragments()}${generateFragments()}${generateFragments()}`;
 }
-let body = '';
+let bodyArr = new Array();
 new URLSearchParams(window.location.search).forEach((value, key)=>{
-    body += ` ${key} = ${value} `;
+    bodyArr.push(value);
 })
+let body = `Hello, I am ${bodyArr[0]}. I want a free session to check out your services. I am ${bodyArr[2]} years old.
+Contact details are: 
+Email address = ${bodyArr[1]} 
+Phone number = ${bodyArr[3]}`;
+// console.log(bodyArr);
 const bookingID = generateBookingID();
 document.querySelector('.container h3').appendChild(document.createTextNode(`BookingID: ${bookingID}`))
 function sendEmail() { 
@@ -24,7 +29,7 @@ function sendEmail() {
     Body: body, 
     }) 
     .then(function (message) { 
-        alert("Your details were sent successfully to our team, will get in touch soon! You may close this window now by clicking the back button") 
+        document.querySelector('.container p').innerHTML = `<b>Please record your BookingID. </b>Your details have been successfully shared with our team. You should receive a mail within the next 24hrs followed by your free 5 min consultation. You may close this tab now. Thanks for choosing mindium.`
     }); 
 } 
 sendEmail();

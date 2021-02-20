@@ -521,6 +521,7 @@ a{
     margin: 10px auto;
     width: 205px;
 }
+
 .services-container .servicesContent span{
     background-color: rgba(0, 0, 0, 0.082);
     padding: 10px;
@@ -589,10 +590,19 @@ a{
     margin-bottom: 25px;
     color: white;
 }
-.cbt form{
-    position: relative;
+.book1sessionbtn{
     display: flex;
-    /* border: black solid; */
+    font-weight: 700;
+    color: white;
+    width: fit-content;
+    background-color: black;
+}
+.book3sessionsbtn{
+    display: flex;
+    font-weight: 700;
+    color: white;
+    width: fit-content;
+    background-color: black;
 }
 
 
