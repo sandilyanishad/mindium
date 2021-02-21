@@ -1,6 +1,3 @@
-if(navigator.userAgent.includes("Instagram")){
-    window.location.href = "https://mindium.co.in";
-}
 window.onload = ()=>{
     if(window.outerHeight < window.outerWidth){
         document.querySelector('.unsupported-res').classList.remove('make-invisible');
