@@ -53,7 +53,7 @@ async function getPostOfTheDayContent(){
 getPostOfTheDayContent();
 function blogsClickHandler(obj){
     // document.querySelector('.blogs-viewer-container .blogImg img').src = obj.img.src;
-    document.querySelector('.blogs-viewer-container .blogContent p').innerHTML = `<img src = "${blogsFinalGlobal[(obj.classList.value).substring(8,9)].imgSrc}">${blogsFinalGlobal[(obj.classList.value).substring(8,9)].postContent}<h3>get products talked about in this blog below.</h3>`;
+    document.querySelector('.blogs-viewer-container .blogContent p').innerHTML = `<img src = "${blogsFinalGlobal[(obj.classList.value).substring(8,9)].imgSrc}">${blogsFinalGlobal[(obj.classList.value).substring(8,9)].postContent}<h3>stuff from amazon.in we think will help you a lot</h3>`;
     blogsFinalGlobal[(obj.classList.value).substring(8,9)].adsArray.forEach((ad,indexOfAd)=>{
         document.querySelector('.blogs-viewer-container .blogContent p').innerHTML += ad;
     });
@@ -84,11 +84,15 @@ exploreBtn.addEventListener('click', ()=>{
         t1.fromTo(document.querySelector('.tagline-extended'), 1, {opacity:0, y:0}, {opacity:1, y:-25, ease:Power2.easeInOut}, "-=0.5")
         document.querySelector('.scroll-box1').classList.remove('make-invisible');
         document.querySelector('.scroll-box2').classList.remove('make-invisible');
+        document.querySelector('.faq1').classList.remove('make-invisible');
+        document.querySelector('.faq2').classList.remove('make-invisible');
         document.querySelector('.scroll-box3').classList.remove('make-invisible');
         document.querySelector('.promotion').classList.remove('make-invisible');
         document.querySelector('.menu-icon').classList.remove('make-invisible');
         t1.fromTo(document.querySelector('.scroll-box1'), 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut})
+        t1.fromTo(document.querySelector('.faq1'), 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut})
         t1.fromTo(document.querySelector('.scroll-box2'), 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut})
+        t1.fromTo(document.querySelector('.faq2'), 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut})
         t1.fromTo(document.querySelector('.scroll-box3'), 0.5, {opacity:0}, {opacity:1, ease:Power2.easeInOut})
     }, 900);     
 });
@@ -123,9 +127,15 @@ function contactHandler(obj){
     document.querySelector('.contact-us-container').classList.remove('make-invisible');
     t1.fromTo(document.querySelector('.contact-us-container'), 0.2, {opacity:0}, {opacity:1, ease:Power2.easeInOut});
 }
-function privacyHandler(obj){}
-function disclaimerHandler(obj){}
-function termsHandler(obj){}
+function privacyHandler(obj){
+    document.querySelector('.privacy-policy').click();
+}
+function disclaimerHandler(obj){
+    document.querySelector('.disclaimer').click();
+}
+function termsHandler(obj){
+    document.querySelector('.t-and-c').click();
+}
 function bookNowFreeSessionHandler(obj){
     document.querySelector('.services-container').classList.add('blur-container');
     document.querySelector('.free-session-booked').classList.remove('make-invisible');

@@ -5,6 +5,27 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Raleway', sans-serif;
+    overflow-x: hidden;
+}
+::-webkit-scrollbar {
+    width: 3px;
+}
+
+  /* Track */
+::-webkit-scrollbar-track {
+    background-color: rgba(0, 0, 0, 0);
+    display: none;
+}
+
+  /* Handle */
+::-webkit-scrollbar-thumb {
+    background: rgba(133, 133, 133, 0); 
+}
+
+  /* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    display: none;
+    background: rgba(85, 85, 85, 0); 
 }
 .container{
     display: flex;
@@ -77,4 +98,17 @@
 }
 .make-invisible{
     display: none;
+}
+.main-policy{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    max-width: 80vw;
+    background-color: rgba(0, 0, 0, 0.075);
+    padding: 10px;
+    border-radius: 15px;
+}
+.main-policy p{
+    height: 100%;
+    flex-shrink: 0;
 }
