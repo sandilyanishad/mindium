@@ -53,7 +53,7 @@ async function getPostOfTheDayContent(){
 getPostOfTheDayContent();
 function blogsClickHandler(obj){
     // document.querySelector('.blogs-viewer-container .blogImg img').src = obj.img.src;
-    document.querySelector('.blogs-viewer-container .blogContent p').innerHTML = `<img src = "${blogsFinalGlobal[(obj.classList.value).substring(8,9)].imgSrc}">${blogsFinalGlobal[(obj.classList.value).substring(8,9)].postContent}<h3>stuff from amazon.in we think will help you a lot</h3>`;
+    document.querySelector('.blogs-viewer-container .blogContent p').innerHTML = `<img src = "${blogsFinalGlobal[(obj.classList.value).substring(8,9)].imgSrc}">${blogsFinalGlobal[(obj.classList.value).substring(8,9)].postContent}<h3>stuff from amazon we think will help you a lot.</h3>`;
     blogsFinalGlobal[(obj.classList.value).substring(8,9)].adsArray.forEach((ad,indexOfAd)=>{
         document.querySelector('.blogs-viewer-container .blogContent p').innerHTML += ad;
     });
