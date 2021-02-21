@@ -37,7 +37,7 @@
 }
 .unsupported-res{
     display: flex;
-    position: absolute;
+    position: fixed;
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
