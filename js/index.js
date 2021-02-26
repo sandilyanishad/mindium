@@ -136,6 +136,9 @@ function disclaimerHandler(obj){
 function termsHandler(obj){
     document.querySelector('.t-and-c').click();
 }
+function refundsHandler(obj){
+    document.querySelector('.refund-policy').click();
+}
 function bookNowFreeSessionHandler(obj){
     document.querySelector('.services-container').classList.add('blur-container');
     document.querySelector('.free-session-booked').classList.remove('make-invisible');
