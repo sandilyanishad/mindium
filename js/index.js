@@ -161,6 +161,9 @@ function session1handler(){
 function session3handler(){
     document.querySelector('.s3').click();
 }
+function sessiongenerichandler(){
+    document.querySelector('.sGeneric').click();
+}
 // window.addEventListener("orientationchange", function() {
 //     if(window.innerHeight < window.innerWidth){
 //         document.querySelector('#root').classList.add('make-invisible');
