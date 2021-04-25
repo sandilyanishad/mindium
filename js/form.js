@@ -36,15 +36,16 @@ document.querySelector('.container h3').appendChild(document.createTextNode(`Boo
 function sendEmail() { 
     Email.send({ 
     Host: "smtp.gmail.com", 
-    Username: "TheesaanEnterprises@gmail.com", 
+    Username: "theesaanenterprises@gmail.com", 
     Password: "6SBU&Z<<gkdsB6m$", 
     To: 'mindium0121@gmail.com', 
-    From: "TheesaanEnterprises@gmail.com", 
+    From: "theesaanenterprises@gmail.com", 
     Subject: `Free Booking ${bookingID}`, 
     Body: body, 
     }) 
-    .then(function (message) { 
-        document.querySelector('.container p').innerHTML = `<b>Please record your BookingID. </b>Your details have been successfully shared with our team. You should receive a mail within the next 24hrs followed by your free 5 min consultation. You may close this tab now. Thanks for choosing mindium.`
+    .then(message => { 
+        console.log(message);
+        document.querySelector('.container p').innerHTML = `<b>Please record your BookingID. </b>Your details have been successfully shared with our team. You should receive a mail within the next 24hrs followed by your free 5 min consultation. You may close this tab now. Thanks for choosing mindium.`;
     }); 
 } 
 sendEmail();
