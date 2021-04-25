@@ -37,7 +37,7 @@ function sendEmail() {
     Email.send({ 
     Host: "smtp.gmail.com", 
     Username: "TheesaanEnterprises@gmail.com", 
-    Password: "QuEsTiOn13!#", 
+    Password: "6SBU&Z<<gkdsB6m$", 
     To: 'mindium0121@gmail.com', 
     From: "TheesaanEnterprises@gmail.com", 
     Subject: `Free Booking ${bookingID}`, 
